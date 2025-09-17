@@ -6,12 +6,15 @@ import reportWebVitals from './reportWebVitals';
 import {OrderContextProvider} from "./context/OrderContext";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// 실제 DOM에 컴포넌트 렌더링
 root.render(
-  <React.StrictMode>
-      <OrderContextProvider>
-          <App />
-      </OrderContextProvider>
-  </React.StrictMode>
+    <React.StrictMode>
+        {/* 전역 Context Provider로 App 전체 감싸기 */}
+        <OrderContextProvider>
+            <App />
+        </OrderContextProvider>
+    </React.StrictMode>
 );
 
 // If you want to start measuring performance in your app, pass a function
