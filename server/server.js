@@ -22,6 +22,7 @@ app.get('/products', (req, res) => {
   res.json(travelData.countries)
 })
 
+
 app.get('/options', (req, res) => {
   res.json(travelData.options)
 })
