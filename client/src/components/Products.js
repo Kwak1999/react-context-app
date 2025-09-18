@@ -2,7 +2,7 @@ import React from 'react';
 
 const Products = ({ name, imagePath, updateItemCount }) => {
     // 콘솔에서 name과 imagePath 확인 (디버깅용)
-    console.log(name, imagePath);
+    // console.log(name, imagePath);
 
     // 수량 입력값이 변경될 때 호출되는 핸들러
     const handleChange = (event) => {

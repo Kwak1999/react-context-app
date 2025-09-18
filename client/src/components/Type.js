@@ -14,7 +14,7 @@ const Type = ({orderType}) => {
     const [orderData, updateItemCount] = useContext(OrderContext);
 
     // 디버깅용: 현재 주문 데이터 출력
-    console.log("orderData", orderData.totals);
+    // console.log("orderData", orderData.totals);
 
     // orderType이 변경될 때마다 해당 데이터를 서버에서 로드
     useEffect(() => {
@@ -28,7 +28,7 @@ const Type = ({orderType}) => {
             const response = await axios.get(`http://localhost:4000/${orderType}`)
             // 가져온 데이터 상태에 저장
             setItems(response.data);
-            console.log(response.data);
+            // console.log(response.data);
         } catch (error) {
             // 에러 발생 시 상태 true
             setError(true);

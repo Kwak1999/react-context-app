@@ -1,9 +1,13 @@
-import React, {useContext} from 'react';
+// React 및 훅 import
+import React, { useContext } from 'react';
+// 주문 타입별 컴포넌트 import (products / options)
 import Type from '../../components/Type'
-import {OrderContext} from "../../context/OrderContext";
+// 주문 데이터 Context import
+import { OrderContext } from "../../context/OrderContext";
 
-// props: setstep – 페이지 이동(단계 전환) 함수
-const OrderPage = ({ setstep }) => {
+// OrderPage 컴포넌트 정의
+// props: setStep – 페이지 이동(단계 전환) 함수
+const OrderPage = ({ setStep }) => {
     // OrderContext에서 주문 데이터만 가져오기
     // (updateItemCount는 사용 안 하므로 배열 첫 번째 요소만 사용)
     const [orderData] = useContext(OrderContext);
@@ -29,12 +33,13 @@ const OrderPage = ({ setstep }) => {
                 <div style={{ width: '50%' }}>
                     {/* 총 가격 표시 */}
                     <h2>Total Price: {orderData.totals.total}</h2>
-                    {/* 주문 버튼 – 클릭 시 setstep(1) 호출로 다음 단계로 이동 */}
-                    <button onClick={() => setstep(1)}>주문</button>
+                    {/* 주문 버튼 – 클릭 시 setStep(1) 호출로 다음 단계로 이동 */}
+                    <button onClick={() => setStep(1)}>주문</button>
                 </div>
             </div>
         </div>
     );
 };
 
+// OrderPage 컴포넌트를 외부에서 사용할 수 있도록 export
 export default OrderPage;
